@@ -25,7 +25,7 @@
     resultados: .space 800       @ espaco para 100 doubles
     numResultados: .word 0
 
-    @ --- SECAO DE DADOS GERADA PELO COMPILADOR ---
+    @ --- SECAO DE DADOS (DICIONARIO MORSE) ---
     .align 2
     morse_dict:
     .word 0x22222000  @ Indice 0 -> Letra 0
@@ -209,84 +209,83 @@ _start:
 
     @ Fim do programa
     @ =========================================================
-    @ RUNTIME ENVIRONMENT: EXIBICAO MORSE NO HARDWARE
+    @ CONFIGURACAO DE VELOCIDADE DA SIMULACAO
+    @ DELAY_SCALE = 10000 (Tempo real).
+    @ Para deixar a simulação MAIS DEVAGAR, aumente (ex: 50000).
+    @ Para deixar a simulação MAIS RÁPIDA, diminua (ex: 1000).
+    .equ DELAY_SCALE, 15000
+    @ =========================================================
+    @ Rotina responsável por exibir o resultado em código Morse
+    @ utilizando os LEDs
     @ =========================================================
     LDR R4, =numResultados
-    LDR R4, [R4]             @ tamanho = len(resultados)
-    LDR R5, =resultados      @ ponteiro_array = &resultados[0]
-    MOV R6, #0               @ i = 0
-    LDR R11, =0xFF200000     @ ponteiro_hardware_leds
+    LDR R4, [R4]             @ Quantidade de resultados armazenados
+    LDR R5, =resultados      @ Início do vetor de resultados
+    MOV R6, #0               @ Índice atual
+    LDR R11, =0xFF200000     @ Endereço dos LEDs
 
 loop_letras:
     CMP R6, R4
     BGE fim_morse            @ if (i >= tamanho) break
 
     VLDR D0, [R5]            
-    VCVT.S32.F64 S0, D0      @ Cast de double para int (truncamento)
-    VMOV R7, S0              @ R7 guarda o caractere ASCII gerado pela expressao RPN
+    VCVT.S32.F64 S0, D0      @ Converte o valor armazenado para inteiro ASCII
+    VMOV R7, S0              @ R7 guarda o caractere ASCII
 
     CMP R7, #32              @ ASCII ' ' = 32 (Espaco entre palavras)
     BEQ espaco_palavra
 
-    SUB R7, R7, #48          @ Indice = ASCII - 48 (Pois a tabela inicia no '0')
+    SUB R7, R7, #48          @ Indice = ASCII - 48
     LSL R7, R7, #2           @ offset = indice * 4 bytes
     LDR R8, =morse_dict
-    LDR R9, [R8, R7]         @ Carrega a mascara hexa otimizada
+    LDR R9, [R8, R7]         @ Busca o padrão Morse correspondente ao caractere
 
 loop_simbolos:
     CMP R9, #0               
-    BEQ proxima_letra        @ Failsafe: se a mascara estiver vazia
+    BEQ proxima_letra        @ Se não houver mais símbolos, passa para a próxima letra
 
-    @ Consome o Nibble mais significativo para identificar o simbolo
-    LSR R10, R9, #28         
-    LSL R9, R9, #4           @ Desloca os proximos simbolos para a frente
+    LSR R10, R9, #28         @ Lê o próximo símbolo do padrão Morse
+    LSL R9, R9, #4           @ Desloca os proximos simbolos
 
     CMP R10, #1
     BLEQ pisca_ponto
     CMP R10, #2
     BLEQ pisca_traco
 
-    @ --- CORRECAO DE TIMING DO COMPILADOR ---
-    @ Verifica se esse foi o ultimo simbolo da mascara
     CMP R9, #0               
-    BEQ proxima_letra        @ Pula o delay intra-letra se a letra acabou
+    BEQ proxima_letra        @ Evita adicionar atraso após o último símbolo da letra
 
-    @ Delay DENTRO da letra (450ms) - Executa apenas se houver proximos simbolos
-    LDR R0, =4500000         
+    LDR R0, =4500000         @ Delay DENTRO da letra (450ms)
     BL delay
     B loop_simbolos
 
 proxima_letra:
-    @ Delay ENTRE letras (900ms) - Executa sempre ao fim de um caractere
-    LDR R0, =9000000         
+    LDR R0, =(900 * DELAY_SCALE)         @ Delay ENTRE letras (900ms)
     BL delay
     B avanca_array
 
 espaco_palavra:
-    @ Delay ENTRE palavras (Meta = 2000ms)
-    @ Como a rotina 'proxima_letra' anterior ja gerou um atraso de 900ms,
-    @ descontamos esse valor para manter o tempo absoluto: 2000 - 900 = 1100ms.
-    LDR R0, =11000000        
+    LDR R0, =(1100 * DELAY_SCALE)       @ Espaço entre palavras (ajustado para totalizar 2000 ms)
     BL delay
 
 avanca_array:
-    ADD R5, R5, #8           @ Avanca ponteiro de memoria (8 bytes por double)
+    ADD R5, R5, #8           @ Avanca ponteiro de memoria
     ADD R6, R6, #1           @ i++
     B loop_letras
 
     @ =========================================================
-    @ SUBROTINAS DE I/O (DRIVERS FISICOS)
+    @ Rotinas de controle dos LEDs e temporização
     @ =========================================================
 pisca_ponto:
     MOV R1, #0x3FF           
     STR R1, [R11]
-    LDR R0, =3000000         
+    LDR R0, =(300 * DELAY_SCALE)         
     B apaga_led
 
 pisca_traco:
     MOV R1, #0x3FF           
     STR R1, [R11]
-    LDR R0, =6000000         
+    LDR R0, =(600 * DELAY_SCALE)         
 
 apaga_led:
     PUSH {LR}                
