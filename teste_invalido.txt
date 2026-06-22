@@ -1,0 +1,13 @@
+(START)
+*{ arquivo de teste: demonstra tratamento de erros lexicos }*
+*{ comentarios em linha inteira, ao final e no meio sao ignorados }*
+(3 2 +) *{ soma valida }*
+(10 3 /)
+(10 3 %)
+(2.0 8 ^)
+(5.0 *{ comentario no meio da expressao }* VAR)
+(VAR)
+(10.0 5.0 -)
+*{ este comentario nao sera fechado — erro lexico intencional
+(2 8 *)
+(END)
