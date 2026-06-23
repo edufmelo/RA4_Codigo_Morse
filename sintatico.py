@@ -8,6 +8,7 @@
 import sys
 import io
 import json
+import os
 
 class LinhaDescartada(Exception):
     pass
@@ -374,7 +375,7 @@ def gerarTokens(linhas_brutas):
             linhas_tokens.append(linha_completa)
 
     # Utiliza função do léxico para salvar o arquivo tokens.txt
-    salvarArquivo('tokens.txt', linhas_tokens)
+    salvarArquivo('relatorios/tokens.txt', linhas_tokens)
 
 def lerTokens(nome_arquivo):
     """
@@ -759,14 +760,14 @@ def gerarArvore(derivacao, nome_teste):
         texto_final = "\n".join(linhas_arvore)
 
         # Grava no arquivo
-        with open(nome_arquivo_md, 'w', encoding='utf-8') as arquivo_md:
+        with open("arvores/" + nome_arquivo_md, 'w', encoding='utf-8') as arquivo_md:
             arquivo_md.write("# Árvore Sintática (Derivação)\n\n")
             arquivo_md.write(f"## Resultado do {nome_teste}:\n\n")
             arquivo_md.write("```text\n")
             arquivo_md.write(texto_final + "\n")
             arquivo_md.write("```\n")
 
-        with open(nome_arquivo_json, 'w', encoding='utf-8') as arquivo_json:
+        with open("arvores/" + nome_arquivo_json, 'w', encoding='utf-8') as arquivo_json:
             # ensure_ascii=False para manter caracteres como ε
             # indent=4 para deixar o JSON mais legível -> separa em múltiplas linhas
             json.dump(derivacao, arquivo_json, ensure_ascii=False, indent=4)
@@ -1202,7 +1203,8 @@ def gerarAssembly(arvore, nome_arquivo):
     codigo_final.append("    B fim")
 
     # Salva o arquivo .s
-    nome_saida = nome_arquivo.replace(".txt", ".s")
+    nome_base = os.path.basename(nome_arquivo)
+    nome_saida = f"build/{nome_base.replace('.txt', '.s')}"
     try:
         with open(nome_saida, 'w', encoding='utf-8') as f:
             for linha in codigo_final:
@@ -1227,7 +1229,7 @@ def main():
     # Temos que gerar os tokens.txt a partir do arquivo teste passado via terminal do sintático
     gerarTokens(linhas_brutas) # gera o tokens.txt usando parseExpressao do léxico
 
-    arquivo_tokens = 'tokens.txt' # nome fixo do arquivo de tokens gerado pela função acima
+    arquivo_tokens = 'relatorios/tokens.txt' # nome fixo do arquivo de tokens gerado pela função acima
     tokens = lerTokens(arquivo_tokens)
 
     # Testes para debug dos tokens lidos

@@ -1,6 +1,6 @@
 # Árvore Sintática (Derivação)
 
-## Resultado do edumelo.txt:
+## Resultado do entradas/edumelo.txt:
 
 ```text
 programa
