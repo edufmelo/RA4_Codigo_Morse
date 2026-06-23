@@ -7,7 +7,6 @@
 from sintatico import construirGramatica, parsear
 from lexico import parseExpressao
 
-
 def testarConstruirGramatica():
     """
     Valida que a gramática foi construída com a quantidade correta de não-terminais e produções.
@@ -59,7 +58,6 @@ def testarConstruirGramatica():
     print(f"\nResultado: {aprovados} aprovados, {reprovados} reprovados")
     print("=" * 50 + "\n")
 
-
 def testarCalcularFirst():
     """
     Valida os conjuntos FIRST contra os valores esperados.
@@ -105,7 +103,6 @@ def testarCalcularFirst():
 
     print(f"\nResultado: {aprovados} aprovados, {reprovados} reprovados")
     print("=" * 50 + "\n")
-
 
 def testarCalcularFollow():
     """
@@ -167,7 +164,6 @@ def testarCalcularFollow():
 
     print(f"\nResultado: {aprovados} aprovados, {reprovados} reprovados")
     print("=" * 50 + "\n")
-
 
 def testarTabelaLL1():
     """
@@ -259,7 +255,6 @@ def testarTabelaLL1():
     print(f"\nResultado: {aprovados} aprovados, {reprovados} reprovados")
     print("=" * 50 + "\n")
 
-
 def testarParsear():
     """
     Valida a execução do parser com tokens simulados de expressões.
@@ -334,7 +329,6 @@ def iniciarTestesSintatico():
     testarCalcularFollow()
     testarTabelaLL1()
     testarParsear()
-
 
 # Execução direta para testes
 if __name__ == "__main__":
