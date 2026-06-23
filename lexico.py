@@ -571,7 +571,7 @@ def main():
         linha_completa = " ".join(tokens_formatados)
         linhasTokens.append(linha_completa)
         
-    salvarArquivo("tokens.txt", linhasTokens)
+    salvarArquivo("relatorios/tokens.txt", linhasTokens)
 
     codigoAssembly = []
     gerarAssembly(listaTokens, codigoAssembly)
