@@ -190,6 +190,7 @@ def gerarAssemblyMorse(arvore_atribuida, nome_arquivo):
             codigo_final.append(linha)
 
     try:
+        os.makedirs(os.path.dirname(nome_arquivo), exist_ok=True)
         with open(nome_arquivo, 'w', encoding='utf-8') as f:
             for linha in codigo_final:
                 f.write(linha + "\n")
