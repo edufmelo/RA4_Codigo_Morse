@@ -58,12 +58,12 @@
                                     "nodos_filhos": [
                                         {
                                             "terminal_folha": "NUMERO",
-                                            "valor_extraido": "49.0",
+                                            "valor_extraido": "19.0",
                                             "linha": 2,
                                             "tipo_inferido": "real",
                                             "tipo": "real",
                                             "categoria_semantica": "literal",
-                                            "info_assembly": "LDR R0, =49.0"
+                                            "info_assembly": "LDR R0, =19.0"
                                         },
                                         {
                                             "nodo_pai": "sufixo_numero",
@@ -71,12 +71,12 @@
                                             "nodos_filhos": [
                                                 {
                                                     "terminal_folha": "NUMERO",
-                                                    "valor_extraido": "0.0",
+                                                    "valor_extraido": "50.0",
                                                     "linha": 2,
                                                     "tipo_inferido": "real",
                                                     "tipo": "real",
                                                     "categoria_semantica": "literal",
-                                                    "info_assembly": "LDR R0, =0.0"
+                                                    "info_assembly": "LDR R0, =50.0"
                                                 },
                                                 {
                                                     "nodo_pai": "operador_final",
@@ -126,12 +126,12 @@
                                             "nodos_filhos": [
                                                 {
                                                     "terminal_folha": "NUMERO",
-                                                    "valor_extraido": "32.0",
+                                                    "valor_extraido": "50.0",
                                                     "linha": 3,
                                                     "tipo_inferido": "real",
                                                     "tipo": "real",
                                                     "categoria_semantica": "literal",
-                                                    "info_assembly": "LDR R0, =32.0"
+                                                    "info_assembly": "LDR R0, =50.0"
                                                 },
                                                 {
                                                     "nodo_pai": "sufixo_numero",
@@ -139,12 +139,12 @@
                                                     "nodos_filhos": [
                                                         {
                                                             "terminal_folha": "NUMERO",
-                                                            "valor_extraido": "0.0",
+                                                            "valor_extraido": "18.0",
                                                             "linha": 3,
                                                             "tipo_inferido": "real",
                                                             "tipo": "real",
                                                             "categoria_semantica": "literal",
-                                                            "info_assembly": "LDR R0, =0.0"
+                                                            "info_assembly": "LDR R0, =18.0"
                                                         },
                                                         {
                                                             "nodo_pai": "operador_final",
@@ -194,12 +194,12 @@
                                                     "nodos_filhos": [
                                                         {
                                                             "terminal_folha": "NUMERO",
-                                                            "valor_extraido": "19.0",
+                                                            "valor_extraido": "86.0",
                                                             "linha": 4,
                                                             "tipo_inferido": "real",
                                                             "tipo": "real",
                                                             "categoria_semantica": "literal",
-                                                            "info_assembly": "LDR R0, =19.0"
+                                                            "info_assembly": "LDR R0, =86.0"
                                                         },
                                                         {
                                                             "nodo_pai": "sufixo_numero",
@@ -207,12 +207,12 @@
                                                             "nodos_filhos": [
                                                                 {
                                                                     "terminal_folha": "NUMERO",
-                                                                    "valor_extraido": "50.0",
+                                                                    "valor_extraido": "1.0",
                                                                     "linha": 4,
                                                                     "tipo_inferido": "real",
                                                                     "tipo": "real",
                                                                     "categoria_semantica": "literal",
-                                                                    "info_assembly": "LDR R0, =50.0"
+                                                                    "info_assembly": "LDR R0, =1.0"
                                                                 },
                                                                 {
                                                                     "nodo_pai": "operador_final",
@@ -220,12 +220,12 @@
                                                                     "nodos_filhos": [
                                                                         {
                                                                             "terminal_folha": "OPERADOR",
-                                                                            "valor_extraido": "+",
+                                                                            "valor_extraido": "-",
                                                                             "linha": 4,
                                                                             "tipo_inferido": "real",
                                                                             "tipo": "real",
                                                                             "categoria_semantica": "operador_aritmetico",
-                                                                            "info_assembly": "OP_ARITMETICA +"
+                                                                            "info_assembly": "OP_ARITMETICA -"
                                                                         }
                                                                     ]
                                                                 }
@@ -262,12 +262,12 @@
                                                             "nodos_filhos": [
                                                                 {
                                                                     "terminal_folha": "NUMERO",
-                                                                    "valor_extraido": "50.0",
+                                                                    "valor_extraido": "32.0",
                                                                     "linha": 5,
                                                                     "tipo_inferido": "real",
                                                                     "tipo": "real",
                                                                     "categoria_semantica": "literal",
-                                                                    "info_assembly": "LDR R0, =50.0"
+                                                                    "info_assembly": "LDR R0, =32.0"
                                                                 },
                                                                 {
                                                                     "nodo_pai": "sufixo_numero",
@@ -275,12 +275,12 @@
                                                                     "nodos_filhos": [
                                                                         {
                                                                             "terminal_folha": "NUMERO",
-                                                                            "valor_extraido": "18.0",
+                                                                            "valor_extraido": "0.0",
                                                                             "linha": 5,
                                                                             "tipo_inferido": "real",
                                                                             "tipo": "real",
                                                                             "categoria_semantica": "literal",
-                                                                            "info_assembly": "LDR R0, =18.0"
+                                                                            "info_assembly": "LDR R0, =0.0"
                                                                         },
                                                                         {
                                                                             "nodo_pai": "operador_final",
@@ -330,12 +330,12 @@
                                                                     "nodos_filhos": [
                                                                         {
                                                                             "terminal_folha": "NUMERO",
-                                                                            "valor_extraido": "86.0",
+                                                                            "valor_extraido": "50.0",
                                                                             "linha": 6,
                                                                             "tipo_inferido": "real",
                                                                             "tipo": "real",
                                                                             "categoria_semantica": "literal",
-                                                                            "info_assembly": "LDR R0, =86.0"
+                                                                            "info_assembly": "LDR R0, =50.0"
                                                                         },
                                                                         {
                                                                             "nodo_pai": "sufixo_numero",
@@ -343,12 +343,12 @@
                                                                             "nodos_filhos": [
                                                                                 {
                                                                                     "terminal_folha": "NUMERO",
-                                                                                    "valor_extraido": "1.0",
+                                                                                    "valor_extraido": "27.0",
                                                                                     "linha": 6,
                                                                                     "tipo_inferido": "real",
                                                                                     "tipo": "real",
                                                                                     "categoria_semantica": "literal",
-                                                                                    "info_assembly": "LDR R0, =1.0"
+                                                                                    "info_assembly": "LDR R0, =27.0"
                                                                                 },
                                                                                 {
                                                                                     "nodo_pai": "operador_final",
@@ -356,12 +356,12 @@
                                                                                     "nodos_filhos": [
                                                                                         {
                                                                                             "terminal_folha": "OPERADOR",
-                                                                                            "valor_extraido": "-",
+                                                                                            "valor_extraido": "+",
                                                                                             "linha": 6,
                                                                                             "tipo_inferido": "real",
                                                                                             "tipo": "real",
                                                                                             "categoria_semantica": "operador_aritmetico",
-                                                                                            "info_assembly": "OP_ARITMETICA -"
+                                                                                            "info_assembly": "OP_ARITMETICA +"
                                                                                         }
                                                                                     ]
                                                                                 }
@@ -398,12 +398,12 @@
                                                                             "nodos_filhos": [
                                                                                 {
                                                                                     "terminal_folha": "NUMERO",
-                                                                                    "valor_extraido": "32.0",
+                                                                                    "valor_extraido": "50.0",
                                                                                     "linha": 7,
                                                                                     "tipo_inferido": "real",
                                                                                     "tipo": "real",
                                                                                     "categoria_semantica": "literal",
-                                                                                    "info_assembly": "LDR R0, =32.0"
+                                                                                    "info_assembly": "LDR R0, =50.0"
                                                                                 },
                                                                                 {
                                                                                     "nodo_pai": "sufixo_numero",
@@ -411,12 +411,12 @@
                                                                                     "nodos_filhos": [
                                                                                         {
                                                                                             "terminal_folha": "NUMERO",
-                                                                                            "valor_extraido": "0.0",
+                                                                                            "valor_extraido": "19.0",
                                                                                             "linha": 7,
                                                                                             "tipo_inferido": "real",
                                                                                             "tipo": "real",
                                                                                             "categoria_semantica": "literal",
-                                                                                            "info_assembly": "LDR R0, =0.0"
+                                                                                            "info_assembly": "LDR R0, =19.0"
                                                                                         },
                                                                                         {
                                                                                             "nodo_pai": "operador_final",
@@ -479,12 +479,12 @@
                                                                                             "nodos_filhos": [
                                                                                                 {
                                                                                                     "terminal_folha": "NUMERO",
-                                                                                                    "valor_extraido": "27.0",
+                                                                                                    "valor_extraido": "26.0",
                                                                                                     "linha": 8,
                                                                                                     "tipo_inferido": "real",
                                                                                                     "tipo": "real",
                                                                                                     "categoria_semantica": "literal",
-                                                                                                    "info_assembly": "LDR R0, =27.0"
+                                                                                                    "info_assembly": "LDR R0, =26.0"
                                                                                                 },
                                                                                                 {
                                                                                                     "nodo_pai": "operador_final",
@@ -547,12 +547,12 @@
                                                                                                     "nodos_filhos": [
                                                                                                         {
                                                                                                             "terminal_folha": "NUMERO",
-                                                                                                            "valor_extraido": "19.0",
+                                                                                                            "valor_extraido": "29.0",
                                                                                                             "linha": 9,
                                                                                                             "tipo_inferido": "real",
                                                                                                             "tipo": "real",
                                                                                                             "categoria_semantica": "literal",
-                                                                                                            "info_assembly": "LDR R0, =19.0"
+                                                                                                            "info_assembly": "LDR R0, =29.0"
                                                                                                         },
                                                                                                         {
                                                                                                             "nodo_pai": "operador_final",
@@ -598,51 +598,20 @@
                                                                                                 },
                                                                                                 {
                                                                                                     "nodo_pai": "conteudo_comando",
-                                                                                                    "producao_acionada": "NUMERO sufixo_numero",
+                                                                                                    "producao_acionada": "KEYWORD_END",
                                                                                                     "nodos_filhos": [
                                                                                                         {
-                                                                                                            "terminal_folha": "NUMERO",
-                                                                                                            "valor_extraido": "50.0",
+                                                                                                            "terminal_folha": "KEYWORD_END",
+                                                                                                            "valor_extraido": "END",
                                                                                                             "linha": 10,
-                                                                                                            "tipo_inferido": "real",
-                                                                                                            "tipo": "real",
-                                                                                                            "categoria_semantica": "literal",
-                                                                                                            "info_assembly": "LDR R0, =50.0"
-                                                                                                        },
-                                                                                                        {
-                                                                                                            "nodo_pai": "sufixo_numero",
-                                                                                                            "producao_acionada": "NUMERO operador_final",
-                                                                                                            "nodos_filhos": [
-                                                                                                                {
-                                                                                                                    "terminal_folha": "NUMERO",
-                                                                                                                    "valor_extraido": "26.0",
-                                                                                                                    "linha": 10,
-                                                                                                                    "tipo_inferido": "real",
-                                                                                                                    "tipo": "real",
-                                                                                                                    "categoria_semantica": "literal",
-                                                                                                                    "info_assembly": "LDR R0, =26.0"
-                                                                                                                },
-                                                                                                                {
-                                                                                                                    "nodo_pai": "operador_final",
-                                                                                                                    "producao_acionada": "OPERADOR",
-                                                                                                                    "nodos_filhos": [
-                                                                                                                        {
-                                                                                                                            "terminal_folha": "OPERADOR",
-                                                                                                                            "valor_extraido": "+",
-                                                                                                                            "linha": 10,
-                                                                                                                            "tipo_inferido": "real",
-                                                                                                                            "tipo": "real",
-                                                                                                                            "categoria_semantica": "operador_aritmetico",
-                                                                                                                            "info_assembly": "OP_ARITMETICA +"
-                                                                                                                        }
-                                                                                                                    ]
-                                                                                                                }
-                                                                                                            ]
+                                                                                                            "tipo": "void",
+                                                                                                            "categoria_semantica": "controle",
+                                                                                                            "info_assembly": "NOP"
                                                                                                         }
                                                                                                     ],
-                                                                                                    "tipo_resultado": "real",
-                                                                                                    "tipo": "real",
-                                                                                                    "categoria_semantica": "expressao"
+                                                                                                    "tipo": "void",
+                                                                                                    "categoria_semantica": "controle",
+                                                                                                    "info_assembly": "NOP"
                                                                                                 },
                                                                                                 {
                                                                                                     "terminal_folha": "FECHA_PAREN",
@@ -653,120 +622,11 @@
                                                                                         },
                                                                                         {
                                                                                             "nodo_pai": "comando_lista",
-                                                                                            "producao_acionada": "comando comando_lista",
+                                                                                            "producao_acionada": "ε",
                                                                                             "nodos_filhos": [
                                                                                                 {
-                                                                                                    "nodo_pai": "comando",
-                                                                                                    "producao_acionada": "ABRE_PAREN conteudo_comando FECHA_PAREN",
-                                                                                                    "nodos_filhos": [
-                                                                                                        {
-                                                                                                            "terminal_folha": "ABRE_PAREN",
-                                                                                                            "valor_extraido": "(",
-                                                                                                            "linha": 11
-                                                                                                        },
-                                                                                                        {
-                                                                                                            "nodo_pai": "conteudo_comando",
-                                                                                                            "producao_acionada": "NUMERO sufixo_numero",
-                                                                                                            "nodos_filhos": [
-                                                                                                                {
-                                                                                                                    "terminal_folha": "NUMERO",
-                                                                                                                    "valor_extraido": "50.0",
-                                                                                                                    "linha": 11,
-                                                                                                                    "tipo_inferido": "real",
-                                                                                                                    "tipo": "real",
-                                                                                                                    "categoria_semantica": "literal",
-                                                                                                                    "info_assembly": "LDR R0, =50.0"
-                                                                                                                },
-                                                                                                                {
-                                                                                                                    "nodo_pai": "sufixo_numero",
-                                                                                                                    "producao_acionada": "NUMERO operador_final",
-                                                                                                                    "nodos_filhos": [
-                                                                                                                        {
-                                                                                                                            "terminal_folha": "NUMERO",
-                                                                                                                            "valor_extraido": "29.0",
-                                                                                                                            "linha": 11,
-                                                                                                                            "tipo_inferido": "real",
-                                                                                                                            "tipo": "real",
-                                                                                                                            "categoria_semantica": "literal",
-                                                                                                                            "info_assembly": "LDR R0, =29.0"
-                                                                                                                        },
-                                                                                                                        {
-                                                                                                                            "nodo_pai": "operador_final",
-                                                                                                                            "producao_acionada": "OPERADOR",
-                                                                                                                            "nodos_filhos": [
-                                                                                                                                {
-                                                                                                                                    "terminal_folha": "OPERADOR",
-                                                                                                                                    "valor_extraido": "+",
-                                                                                                                                    "linha": 11,
-                                                                                                                                    "tipo_inferido": "real",
-                                                                                                                                    "tipo": "real",
-                                                                                                                                    "categoria_semantica": "operador_aritmetico",
-                                                                                                                                    "info_assembly": "OP_ARITMETICA +"
-                                                                                                                                }
-                                                                                                                            ]
-                                                                                                                        }
-                                                                                                                    ]
-                                                                                                                }
-                                                                                                            ],
-                                                                                                            "tipo_resultado": "real",
-                                                                                                            "tipo": "real",
-                                                                                                            "categoria_semantica": "expressao"
-                                                                                                        },
-                                                                                                        {
-                                                                                                            "terminal_folha": "FECHA_PAREN",
-                                                                                                            "valor_extraido": ")",
-                                                                                                            "linha": 11
-                                                                                                        }
-                                                                                                    ]
-                                                                                                },
-                                                                                                {
-                                                                                                    "nodo_pai": "comando_lista",
-                                                                                                    "producao_acionada": "comando comando_lista",
-                                                                                                    "nodos_filhos": [
-                                                                                                        {
-                                                                                                            "nodo_pai": "comando",
-                                                                                                            "producao_acionada": "ABRE_PAREN conteudo_comando FECHA_PAREN",
-                                                                                                            "nodos_filhos": [
-                                                                                                                {
-                                                                                                                    "terminal_folha": "ABRE_PAREN",
-                                                                                                                    "valor_extraido": "(",
-                                                                                                                    "linha": 12
-                                                                                                                },
-                                                                                                                {
-                                                                                                                    "nodo_pai": "conteudo_comando",
-                                                                                                                    "producao_acionada": "KEYWORD_END",
-                                                                                                                    "nodos_filhos": [
-                                                                                                                        {
-                                                                                                                            "terminal_folha": "KEYWORD_END",
-                                                                                                                            "valor_extraido": "END",
-                                                                                                                            "linha": 12,
-                                                                                                                            "tipo": "void",
-                                                                                                                            "categoria_semantica": "controle",
-                                                                                                                            "info_assembly": "NOP"
-                                                                                                                        }
-                                                                                                                    ],
-                                                                                                                    "tipo": "void",
-                                                                                                                    "categoria_semantica": "controle",
-                                                                                                                    "info_assembly": "NOP"
-                                                                                                                },
-                                                                                                                {
-                                                                                                                    "terminal_folha": "FECHA_PAREN",
-                                                                                                                    "valor_extraido": ")",
-                                                                                                                    "linha": 12
-                                                                                                                }
-                                                                                                            ]
-                                                                                                        },
-                                                                                                        {
-                                                                                                            "nodo_pai": "comando_lista",
-                                                                                                            "producao_acionada": "ε",
-                                                                                                            "nodos_filhos": [
-                                                                                                                {
-                                                                                                                    "terminal_folha": "ε",
-                                                                                                                    "linha": -1
-                                                                                                                }
-                                                                                                            ]
-                                                                                                        }
-                                                                                                    ]
+                                                                                                    "terminal_folha": "ε",
+                                                                                                    "linha": -1
                                                                                                 }
                                                                                             ]
                                                                                         }

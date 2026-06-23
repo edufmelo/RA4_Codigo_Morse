@@ -14,9 +14,9 @@ programa
         ├── comando
         │   ├── ABRE_PAREN (()
         │   ├── conteudo_comando
-        │   │   ├── NUMERO (49.0)
+        │   │   ├── NUMERO (19.0)
         │   │   └── sufixo_numero
-        │   │       ├── NUMERO (0.0)
+        │   │       ├── NUMERO (50.0)
         │   │       └── operador_final
         │   │           └── OPERADOR (+)
         │   └── FECHA_PAREN ())
@@ -24,9 +24,9 @@ programa
             ├── comando
             │   ├── ABRE_PAREN (()
             │   ├── conteudo_comando
-            │   │   ├── NUMERO (32.0)
+            │   │   ├── NUMERO (50.0)
             │   │   └── sufixo_numero
-            │   │       ├── NUMERO (0.0)
+            │   │       ├── NUMERO (18.0)
             │   │       └── operador_final
             │   │           └── OPERADOR (+)
             │   └── FECHA_PAREN ())
@@ -34,19 +34,19 @@ programa
                 ├── comando
                 │   ├── ABRE_PAREN (()
                 │   ├── conteudo_comando
-                │   │   ├── NUMERO (19.0)
+                │   │   ├── NUMERO (86.0)
                 │   │   └── sufixo_numero
-                │   │       ├── NUMERO (50.0)
+                │   │       ├── NUMERO (1.0)
                 │   │       └── operador_final
-                │   │           └── OPERADOR (+)
+                │   │           └── OPERADOR (-)
                 │   └── FECHA_PAREN ())
                 └── comando_lista
                     ├── comando
                     │   ├── ABRE_PAREN (()
                     │   ├── conteudo_comando
-                    │   │   ├── NUMERO (50.0)
+                    │   │   ├── NUMERO (32.0)
                     │   │   └── sufixo_numero
-                    │   │       ├── NUMERO (18.0)
+                    │   │       ├── NUMERO (0.0)
                     │   │       └── operador_final
                     │   │           └── OPERADOR (+)
                     │   └── FECHA_PAREN ())
@@ -54,19 +54,19 @@ programa
                         ├── comando
                         │   ├── ABRE_PAREN (()
                         │   ├── conteudo_comando
-                        │   │   ├── NUMERO (86.0)
+                        │   │   ├── NUMERO (50.0)
                         │   │   └── sufixo_numero
-                        │   │       ├── NUMERO (1.0)
+                        │   │       ├── NUMERO (27.0)
                         │   │       └── operador_final
-                        │   │           └── OPERADOR (-)
+                        │   │           └── OPERADOR (+)
                         │   └── FECHA_PAREN ())
                         └── comando_lista
                             ├── comando
                             │   ├── ABRE_PAREN (()
                             │   ├── conteudo_comando
-                            │   │   ├── NUMERO (32.0)
+                            │   │   ├── NUMERO (50.0)
                             │   │   └── sufixo_numero
-                            │   │       ├── NUMERO (0.0)
+                            │   │       ├── NUMERO (19.0)
                             │   │       └── operador_final
                             │   │           └── OPERADOR (+)
                             │   └── FECHA_PAREN ())
@@ -76,7 +76,7 @@ programa
                                 │   ├── conteudo_comando
                                 │   │   ├── NUMERO (50.0)
                                 │   │   └── sufixo_numero
-                                │   │       ├── NUMERO (27.0)
+                                │   │       ├── NUMERO (26.0)
                                 │   │       └── operador_final
                                 │   │           └── OPERADOR (+)
                                 │   └── FECHA_PAREN ())
@@ -86,7 +86,7 @@ programa
                                     │   ├── conteudo_comando
                                     │   │   ├── NUMERO (50.0)
                                     │   │   └── sufixo_numero
-                                    │   │       ├── NUMERO (19.0)
+                                    │   │       ├── NUMERO (29.0)
                                     │   │       └── operador_final
                                     │   │           └── OPERADOR (+)
                                     │   └── FECHA_PAREN ())
@@ -94,28 +94,8 @@ programa
                                         ├── comando
                                         │   ├── ABRE_PAREN (()
                                         │   ├── conteudo_comando
-                                        │   │   ├── NUMERO (50.0)
-                                        │   │   └── sufixo_numero
-                                        │   │       ├── NUMERO (26.0)
-                                        │   │       └── operador_final
-                                        │   │           └── OPERADOR (+)
+                                        │   │   └── KEYWORD_END (END)
                                         │   └── FECHA_PAREN ())
                                         └── comando_lista
-                                            ├── comando
-                                            │   ├── ABRE_PAREN (()
-                                            │   ├── conteudo_comando
-                                            │   │   ├── NUMERO (50.0)
-                                            │   │   └── sufixo_numero
-                                            │   │       ├── NUMERO (29.0)
-                                            │   │       └── operador_final
-                                            │   │           └── OPERADOR (+)
-                                            │   └── FECHA_PAREN ())
-                                            └── comando_lista
-                                                ├── comando
-                                                │   ├── ABRE_PAREN (()
-                                                │   ├── conteudo_comando
-                                                │   │   └── KEYWORD_END (END)
-                                                │   └── FECHA_PAREN ())
-                                                └── comando_lista
-                                                    └── ε ()
+                                            └── ε ()
 ```

@@ -7,6 +7,7 @@
 
 import sys
 import json
+import os
 
 from lexico import lerArquivo
 from sintatico import construirGramatica, gerarTokens, lerTokens, parsear, gerarArvore, coletarTerminais
@@ -420,7 +421,7 @@ def salvarTabelaSimbolos(tabela, nome_arquivo="tabela_simbolos.md"):
     linhas.append("")
 
     try:
-        with open(nome_arquivo, 'w', encoding='utf-8') as arquivo_tabela:
+        with open("relatorios/" + nome_arquivo, 'w', encoding='utf-8') as arquivo_tabela:
             arquivo_tabela.write("\n".join(linhas) + "\n")
         print(f"Tabela de símbolos salva em '{nome_arquivo}'.")
     except Exception as e:
@@ -449,7 +450,7 @@ def salvarErrosSemanticos(erros, nome_arquivo="erros_semanticos.md"):
             linhas.append("")
 
     try:
-        with open(nome_arquivo, 'w', encoding='utf-8') as arquivo_erros:
+        with open("relatorios/" + nome_arquivo, 'w', encoding='utf-8') as arquivo_erros:
             arquivo_erros.write("\n".join(linhas) + "\n")
         print(f"Relatório de erros semânticos salvo em '{nome_arquivo}'.")
     except Exception as e:
@@ -466,7 +467,7 @@ def prepararEntradaSemantica(nome_arquivo):
     print(f"Linhas de código: {len(linhas_arquivo)}")
 
     gerarTokens(linhas_arquivo)
-    tokens = lerTokens("tokens.txt")
+    tokens = lerTokens("relatorios/tokens.txt")
 
     total_tokens = sum(len(linha) for linha in tokens)
     erros_lexicos = [t for linha in tokens for t in linha if t.tipo in ("ERRO", "LINHA_INVALIDA")]
@@ -892,7 +893,7 @@ def auxSalvarRelatorioTipos(erros_tipo, nome_arquivo="relatorio_tipos.md"):
             linhas.append("")
 
     try:
-        with open(nome_arquivo, "w", encoding="utf-8") as arquivo_saida:
+        with open("relatorios/" + nome_arquivo, "w", encoding="utf-8") as arquivo_saida:
             arquivo_saida.write("\n".join(linhas) + "\n")
         print(f"Relatório de verificação de tipos salvo em '{nome_arquivo}'.")
     except Exception as erro_io:
@@ -1050,7 +1051,7 @@ def salvarArvoreAtribuida(arvore_atribuida):
 
     try:
         # Salva o arquivo JSON
-        with open(nome_json, "w", encoding="utf-8") as arquivo_json:
+        with open("arvores/" + nome_json, "w", encoding="utf-8") as arquivo_json:
             json.dump(arvore_atribuida, arquivo_json, ensure_ascii=False, indent=4)
         print(f"Sucesso: Árvore atribuída exportada para '{nome_json}'.")
 
@@ -1058,7 +1059,7 @@ def salvarArvoreAtribuida(arvore_atribuida):
         linhas_arvore = construirTextoArvoreAtribuida(arvore_atribuida)
         texto_final = "\n".join(linhas_arvore)
 
-        with open(nome_md, "w", encoding="utf-8") as arquivo_md:
+        with open("arvores/" + nome_md, "w", encoding="utf-8") as arquivo_md:
             arquivo_md.write("# Árvore Sintática Atribuída (Aumentada)\n\n")
             arquivo_md.write("```text\n")
             arquivo_md.write(texto_final + "\n")
@@ -1796,7 +1797,8 @@ def executarAnaliseSemantica(nome_arquivo):
         arvore_atribuida = gerarArvoreAtribuida(arvore_sintatica_inicial, tabela_simbolos)
 
         # Gera código Assembly ARMv7 a partir da árvore atribuída
-        nome_assembly = nome_arquivo.replace(".txt", ".s")
+        nome_base = os.path.basename(nome_arquivo)
+        nome_assembly = f"build/{nome_base.replace('.txt', '.s')}"
         gerarAssembly(arvore_atribuida, nome_assembly)
 
     print(f"\n{'='*60}")
@@ -1810,7 +1812,8 @@ def executarAnaliseSemantica(nome_arquivo):
     if not todos_erros:
         print("  - arvore_atribuida.json")
         print("  - arvore_atribuida.md")
-        nome_assembly = nome_arquivo.replace(".txt", ".s")
+        nome_base = os.path.basename(nome_arquivo)
+        nome_assembly = f"build/{nome_base.replace('.txt', '.s')}"
         print(f"  - {nome_assembly}")
     print(f"{'='*60}")
     print("Analisador semântico concluído.")

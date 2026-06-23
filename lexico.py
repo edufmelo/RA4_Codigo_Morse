@@ -6,6 +6,7 @@
 # Nome do grupo no Canvas: RA3_7
 
 import sys
+import os
 
 # Como nos slides (Aula 04), contudo, de forma mais simples com tipo e valor
 class Token:
@@ -530,7 +531,7 @@ def main():
         print("Uso: python analisador.py <arquivo_teste>")
         return
 
-    from funcoesTesteLexico import iniciarTestes
+    from funcoesTeste.funcoesTesteLexico import iniciarTestes
 
     iniciarTestes()
 
@@ -575,7 +576,8 @@ def main():
     codigoAssembly = []
     gerarAssembly(listaTokens, codigoAssembly)
 
-    nomeAssembly = nomeArquivo.replace(".txt", ".s")
+    nome_base = os.path.basename(nomeArquivo)
+    nomeAssembly = f"build/{nome_base.replace('.txt', '.s')}"
     salvarArquivo(nomeAssembly, codigoAssembly)
 
 if __name__ == "__main__":

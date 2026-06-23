@@ -2,12 +2,6 @@
 
 .data
     .align 3
-    const_49_0: .double 49.0
-    .align 3
-    const_0_0: .double 0.0
-    .align 3
-    const_32_0: .double 32.0
-    .align 3
     const_19_0: .double 19.0
     .align 3
     const_50_0: .double 50.0
@@ -17,6 +11,10 @@
     const_86_0: .double 86.0
     .align 3
     const_1_0: .double 1.0
+    .align 3
+    const_32_0: .double 32.0
+    .align 3
+    const_0_0: .double 0.0
     .align 3
     const_27_0: .double 27.0
     .align 3
@@ -78,38 +76,6 @@
 _start:
 
     @ (START) - inicio do programa
-
-    @ Comando RPN: ( 49.0 0.0 + )
-    LDR R4, =const_49_0
-    VLDR D0, [R4]             @ carrega double 49.0
-    LDR R4, =const_0_0
-    VLDR D1, [R4]             @ carrega double 0.0
-    VADD.F64 D2, D0, D1    @ soma real
-    @ Armazena resultado no historico
-    LDR R0, =numResultados
-    LDR R1, [R0]                @ R1 = numResultados atual
-    LDR R2, =resultados
-    LSL R3, R1, #3              @ offset = R1 * 8
-    ADD R2, R2, R3
-    VSTR D2, [R2]     @ guarda resultado
-    ADD R1, R1, #1
-    STR R1, [R0]                @ numResultados++
-
-    @ Comando RPN: ( 32.0 0.0 + )
-    LDR R4, =const_32_0
-    VLDR D0, [R4]             @ carrega double 32.0
-    LDR R4, =const_0_0
-    VLDR D1, [R4]             @ carrega double 0.0
-    VADD.F64 D2, D0, D1    @ soma real
-    @ Armazena resultado no historico
-    LDR R0, =numResultados
-    LDR R1, [R0]                @ R1 = numResultados atual
-    LDR R2, =resultados
-    LSL R3, R1, #3              @ offset = R1 * 8
-    ADD R2, R2, R3
-    VSTR D2, [R2]     @ guarda resultado
-    ADD R1, R1, #1
-    STR R1, [R0]                @ numResultados++
 
     @ Comando RPN: ( 19.0 50.0 + )
     LDR R4, =const_19_0
@@ -245,7 +211,7 @@ _start:
     @ DELAY_SCALE = ciclos por ms (ajustado para calibrar no CPUlator)
     @ tempo real = 10000
     .equ DELAY_SCALE, 15000    @ valor teste
-    @ =========================================================
+    @ ---
     @ Rotina responsavel por exibir o resultado em codigo morse
     @ utilizando os LEDs
     LDR R4, =numResultados
